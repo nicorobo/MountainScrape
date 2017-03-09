@@ -3,7 +3,7 @@
 
 ## Using MountainScrape
 
-![Using MountainScrape](https://dl.dropboxusercontent.com/s/h7mbwxnupfqnzid/Screenshot%202017-03-08%2018.50.27.png?dl=0)
+<img src="https://dl.dropboxusercontent.com/s/h7mbwxnupfqnzid/Screenshot%202017-03-08%2018.50.27.png" alt="MountainScrape Demo" width="600px"/>
 
 ### Dependencies
 
