@@ -10,7 +10,7 @@ from route import scrape_route
 mainUrl = "https://www.mountainproject.com"
 
 # Setup flags
-dbFlag = '--db' in sys.argv
+apiFlag = '--api' in sys.argv
 routeFlag = '--route' in sys.argv
 
 def scrape(url, areas, areasID, locations):
@@ -19,7 +19,7 @@ def scrape(url, areas, areasID, locations):
 	# Retrieve area data and initialize areaID
 	areaData = scrape_area(soup, url, areas, areasID, locations)
 	areaID = None
-	if dbFlag:
+	if apiFlag:
 		# Get area's id and remove quotes
 		areaID = rest.post('/areas', areaData).text[1:-1]
 
@@ -40,7 +40,7 @@ def scrape(url, areas, areasID, locations):
 			if routeFlag:
 				time.sleep(0.1)
 				routeData = scrape_route(link, areas, areasID+[areaID])
-				if dbFlag:
+				if apiFlag:
 					rest.post('/routes', routeData)
 
 def get_area_links(soup):
